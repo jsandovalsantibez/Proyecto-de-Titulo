@@ -16,9 +16,11 @@ import LogoutOutLinedIcon from '@mui/icons-material/Logout';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 
+
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  
   return (
     <MenuItem
       active={selected === title}
@@ -71,14 +73,15 @@ const MySidebar = () => {
             </MenuItem>
 
             <Box paddingLeft={isCollapsed ? undefined : "5%"}>
-              <Item
-                title="Dashboard"
-                to="/"
-                icon={<HomeOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-
+              <Link to="Dashboard">
+                <Item
+                  title="Dashboard"
+                  to="/index"
+                  icon={<HomeOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              </Link>
               <Typography
                 variant="h6"
                 color={colors.grey[600]}
@@ -86,13 +89,15 @@ const MySidebar = () => {
               >
                 Ejecución
               </Typography>
-              <Item
-                title="Asignar actividades"
-                to="/invoices"
-                icon={<NoteAddOutLinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
+              <Link to="Tasks">
+                <Item
+                  title="Asignar actividades"
+                  to="/invoices"
+                  icon={<NoteAddOutLinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              </Link>
               <Item
                 title="Actividades"
                 to="/invoices"
@@ -100,14 +105,15 @@ const MySidebar = () => {
                 selected={selected}
                 setSelected={setSelected}
               />
-              <Item
-                title="Calendario"
-                to="/calendar"
-                icon={<CalendarTodayOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-
+              <Link to="Calendar">
+                <Item
+                  title="Calendario"
+                  to="/calendar"
+                  icon={<CalendarTodayOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              </Link>
               <Typography
                 variant="h6"
                 color={colors.grey[600]}
@@ -136,14 +142,15 @@ const MySidebar = () => {
                 selected={selected}
                 setSelected={setSelected}
               />
-              <Item
-                title="Carta Gantt"
-                to="/calendar"
-                icon={<EmailOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-
+              <Link to="Gantt">
+                <Item
+                  title="Carta Gantt"
+                  to="/calendar"
+                  icon={<EmailOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              </Link>
               <Typography
                 variant="h6"
                 color={colors.grey[600]}
@@ -151,13 +158,15 @@ const MySidebar = () => {
               >
                 Información
               </Typography>
-              <Item
-                title="Perfil"
-                to="/form"
-                icon={<PersonOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
+              <Link to="Profile">  
+                <Item
+                  title="Perfil"
+                  to="/form"
+                  icon={<PersonOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              </Link>
               <Item
                 title="Cerrar Sesión"
                 to="/geography"
